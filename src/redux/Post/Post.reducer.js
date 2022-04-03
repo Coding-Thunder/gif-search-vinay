@@ -1,7 +1,9 @@
-import PostTypes from "./Post.types";
+const { default: PostTypes } = require("./post.types");
+
 const INITIAL_STATE = {
-  hidden: true,
-  Posts: [],
+  tooglePost: true,
+  posts: [],
+  showGif: false,
 };
 
 const postReducer = (state = INITIAL_STATE, action) => {
@@ -9,7 +11,17 @@ const postReducer = (state = INITIAL_STATE, action) => {
     case PostTypes.TOOGLE_ADD_POST:
       return {
         ...state,
-        hidden: !state.hidden,
+        tooglePost: !state.tooglePost,
+      };
+    case PostTypes.GIF_TOOGLE:
+      return {
+        ...state,
+        showGif: !state.showGif,
+      };
+    case PostTypes.CREATE_A_POST:
+      return {
+        ...state,
+        posts: action.payload,
       };
     default:
       return state;
