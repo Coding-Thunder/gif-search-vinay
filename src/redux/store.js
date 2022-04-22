@@ -6,12 +6,12 @@ import thunk from "redux-thunk";
 const middleWares = [thunk, logger];
 
 const store = createStore(
-  rootReducer,
-  compose(
-    window.__REDUX_DEVTOOLS_EXTENSION__ &&
-      window.__REDUX_DEVTOOLS_EXTENSION__(),
-    applyMiddleware(...middleWares)
-  )
+  rootReducer
+  // compose(
+  //   window.__REDUX_DEVTOOLS_EXTENSION__ &&
+  //     window.__REDUX_DEVTOOLS_EXTENSION__(),
+  //   applyMiddleware(...middleWares)
+  // )
 );
 
 export default store;

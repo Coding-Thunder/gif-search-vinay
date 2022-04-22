@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 const GifBox = ({ setGifUrl }) => {
   const [state, setState] = useState({
     title: "trending",
-    gifs: [],
+    gifs: null,
     loading: false,
     error: "",
   });
@@ -16,7 +16,6 @@ const GifBox = ({ setGifUrl }) => {
       .get(gifyURL)
       .then((response) => {
         setState({ gifs: response.data.data });
-        console.log(response.data.data);
       })
       .catch((err) => {
         console.log(err.message);
@@ -39,15 +38,16 @@ const GifBox = ({ setGifUrl }) => {
         />
       </div>
       <div className="flex flex-wrap justify-between p-4 ">
-        {state?.gifs?.map((data) => (
-          <img
-            key={data.id}
-            className="w-20 cursor-pointer"
-            onClick={() => setGifUrl(data.images.fixed_height.url)}
-            src={data.images.fixed_height.url}
-            alt=""
-          />
-        ))}
+        {state.gifs &&
+          state.gifs.map((data) => (
+            <img
+              key={data.id}
+              className="w-20 cursor-pointer"
+              onClick={() => setGifUrl(data.images.fixed_height.url)}
+              src={data.images.fixed_height.url}
+              alt=""
+            />
+          ))}
       </div>
     </div>
   );

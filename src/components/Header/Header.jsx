@@ -3,9 +3,8 @@ import { RiPencilFill } from "react-icons/ri";
 import { BiPhotoAlbum } from "react-icons/bi";
 import { BsCameraVideoFill } from "react-icons/bs";
 import { GrClose } from "react-icons/gr";
-import { tooglePost } from "../../redux/post/post.actions";
+import { tooglePost } from "../../redux/Post/Post.actions";
 import { connect } from "react-redux";
-
 
 const Header = ({ toogle }) => {
   const [Items] = useState([
@@ -20,14 +19,13 @@ const Header = ({ toogle }) => {
           <data.icon className="mr-2" />
           <p className="text-blue-800">{data.title}</p>
         </div>
-      ))
-      }
+      ))}
       <GrClose onClick={toogle} className="absolute right-2 cursor-pointer" />
-    </div >
+    </div>
   );
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  toogle: () => dispatch(tooglePost())
-})
+  toogle: () => dispatch(tooglePost()),
+});
 export default connect(null, mapDispatchToProps)(Header);

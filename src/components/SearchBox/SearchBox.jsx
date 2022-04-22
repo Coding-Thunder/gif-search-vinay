@@ -4,7 +4,7 @@ import { IoLocation } from "react-icons/io5";
 import { AiOutlineGif } from "react-icons/ai";
 import { FaCalendarAlt } from "react-icons/fa";
 import Header from "../Header/Header";
-import { addPost, toogleGif, tooglePost } from "../../redux/post/post.actions";
+import { addPost, toogleGif, tooglePost } from "../../redux/Post/Post.actions";
 import { connect } from "react-redux";
 import GifBox from "../GifBox/GifBox";
 

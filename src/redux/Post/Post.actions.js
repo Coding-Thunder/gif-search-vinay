@@ -1,4 +1,4 @@
-import PostTypes from "./post.types";
+import PostTypes from "./Post.types";
 
 export const tooglePost = () => ({
   type: PostTypes.TOOGLE_ADD_POST,

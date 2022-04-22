@@ -1,4 +1,4 @@
-const { default: PostTypes } = require("./post.types");
+const { default: PostTypes } = require("./Post.types");
 
 const INITIAL_STATE = {
   tooglePost: true,

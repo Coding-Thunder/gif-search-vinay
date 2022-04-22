@@ -1,7 +1,8 @@
 import { connect } from "react-redux";
+import React from "react";
 import "./App.css";
 import SearchBox from "./components/SearchBox/SearchBox";
-import { tooglePost } from "./redux/post/post.actions";
+import { tooglePost } from "./redux/Post/Post.actions";
 
 function App({ show, posts, toogle }) {
   return (
@@ -21,7 +22,7 @@ function App({ show, posts, toogle }) {
             posts.map((data) => (
               <div className="shadow flex flex-col justify-center items-center rounded-lg mb-6 p-4">
                 <h1 className="mb-4">{data.title}</h1>
-                <img src={data.url} />
+                <img src={data.url} alt="gif" />
               </div>
             ))}
         </div>
